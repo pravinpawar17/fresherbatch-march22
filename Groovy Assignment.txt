@@ -1,0 +1,138 @@
+Q.1. Write a method called isPrime that takes an integer argument and returns a 
+Boolean. Determine whether the number is prime by dividing it by all numbers from 
+2 up to one less than the number.
+
+
+def isPrime(int number)
+{
+    
+int    flag =0;
+    for (int i = 2; i <= number / 2; ++i) 
+    {
+       
+      // condition for nonprime number
+      if (number % i == 0)
+      {
+        flag = 1;
+        break;
+      }
+    }
+
+    if (flag!=0)
+      println(true);
+    else
+      println(false);
+}
+isPrime(1)
+
+
+
+
+
+Q.2 2. Strings
+
+ a) How many characters are in the string "Hello, Groovy!"?
+
+def string = "Hello Groovy!"
+def len=string.length()
+println len
+
+
+b) Define a string variable containing a name. Print a hello statement with your 
+name using string concatenation, then using a Groovy string
+
+def name="Groovy"
+println "Hello ".concat(name)
+println "Welcome to groovy"
+
+ c) Demonstrate that "racecar" is a palindrome by comparing it to its reverse.
+
+def palin="racecar"
+def rev_palin=palin.reverse()
+
+if(palin==rev_palin)
+{
+    println("Given String is Palindrome :"+ true)
+}
+else
+{
+    println("Given string is Palindrome :"+ false)
+    
+}
+
+Do the same with "Bob", removing case sensitivity first. 
+def str="Bob"
+def con_str=str.toLowerCase()
+println con_str
+if(str==con_str)
+{
+    println ("Palindrome")
+}
+else
+{
+    println("Not Palindrome")
+}
+
+d) Define a string variable containing the sentence, "Hello, World. How are 
+you?". Split the sentence into an array using the split method. Count the 
+number of words. Do the same using the tokenize method.*/
+
+def string2="Hello world How are you?"
+def str_split=string2.split()
+println str_split
+def count=str_split.size()
+println count
+def s = 'one two three four'
+def resultList = s.tokenize()
+println resultList
+
+
+e) Using the same sentence, use array notation (square brackets) to print the 
+substring "World".*/
+
+def string3="Hello world How are you"
+println string3.substring(6,12)
+
+
+f) Use array notation to print the last word, but reversed.*/
+
+
+def birds = ["Parrot", "Cockatiel", "Pigeon"] as String[]
+def last_ele=birds[2]
+println last_ele.reverse()
+
+
+
+
+Q.3. Create a list of strings. Sort them alphabetically. Sort them by length. Sort them by 
+length in descending order
+
+
+def Cars=["Range Rover","Jaguar","Volvo","BMW","Volkswagon","Honda"]
+println Cars
+def sortedList=Cars.sort()
+println sortedList
+byLength =Cars.sort { it.size() }
+println byLength
+byDescend=Cars.sort { -it.size() }
+println byDescend
+def sameLen=Cars[4,3]
+println sameLen
+println sameLen.sort()
+
+
+
+Q.4. Create a list of numbers. Add them together. First double each number, then add 
+them up. Compute their average.
+
+def numList=[12,45,6,82,56,46]
+sumList=numList.sum()
+println ("Sum of the element is : "+ sumList)
+doubleList=numList.collect{it*2}
+println ("Double the list element : "+ doubleList)
+doubleSum=doubleList.sum()
+println ("Sum After Doubling the list : "+ doubleSum)
+
+average=(sumList+doubleSum)/2
+println ("Average of both the List : "+average)
+
